@@ -142,11 +142,11 @@ lightgreen
 
 Hole
 black
+..0..
+.000.
 00000
-00000
-00000
-00000
-00000
+.000.
+..0..
 
 RigidCrate
 red blue
@@ -279,7 +279,7 @@ RULES
 [PlayerStart] -> [Cplayer]
 
 [ >  CPlayer | Crate no RigidCrate ] -> [  >  CPlayer | > Crate  ]
-[ >  APlayer | Crate ] -> [  >  APlayer | > Crate  ]
+[ >  APlayer | FusedCrate ] -> [  >  APlayer | > FusedCrate  ]
 
 (Transformation Rules
 - Couldn't figure out how to make this more generic
@@ -343,7 +343,7 @@ horizontal[scrate | ... | Crate] -> [scrate | ... | < Crate]
 [> crate | tool] -> [crate | tool]
 
 (UnAcid rules  - fuses crates together that can fill in holes)
-[Aplayer | Crate | Crate] -> [Aplayer | FusedCrate |]
+[> Aplayer | Crate | Crate] -> [Aplayer |  | FusedCrate]
 
 (Hole rules)
 [> FusedCrate | Hole ] -> [|]
@@ -402,6 +402,46 @@ Message You must put all the boxes on their same-colored targets, and finish you
 #...........#
 #...P.I.O...#
 #############)
+
+(Soapy's first level)
+####################
+#.#.....#.#........#
+#.#.....#.#........#
+#.#.....#.#........#
+#.*#..............b#
+#.#######.##########
+#.......#.#........#
+#.......#i#........#
+#.......###........#
+#hs..1...b.........#
+####################
+
+
+(soapy's second level)
+####################
+#1.#.......a.......#
+#..#.#.............#
+#..#.#.............#
+#.*#.#.*.*..b......#
+#..#o#...*..b......#
+#..#.#...*..b......#
+#..#.#.............#
+#..#.############00#
+#...o....s........p#
+####################
+
+(soapy's third level)
+####################
+#1sh#a.............#
+#...#*#.*..........#
+#.....0.....000....#
+#....0.....0...0...#
+#....*0..b.0.o.0...#
+#.*..0.....0...0...#
+#....0......000....#
+#...b0.............#
+#....0.............#
+####################
 
 (Unhammer Tutorial)
 ###########
