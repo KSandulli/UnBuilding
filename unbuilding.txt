@@ -307,7 +307,6 @@ RULES
 [action Aplayer UnSaw] 		-> [Splayer UnAcid] sfx1
 [action Aplayer UnCrowbar] 	-> [Jplayer UnAcid] sfx4
 
-
 [action Jplayer Coffee] 	-> [Cplayer UnCrowbar] sfx3
 [action Jplayer UnHammer] 	-> [Hplayer UnCrowbar] sfx0
 [action Jplayer UnSaw] 		-> [Splayer UnCrowbar] sfx1
