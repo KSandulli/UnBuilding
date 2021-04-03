@@ -1,7 +1,6 @@
 title Un-building
 author Team 2
 homepage www.puzzlescript.net
-youtube wDgQdr8ZkTw
 
 debug
 verbose_logging
@@ -29,9 +28,24 @@ darkgray
 00000
 00000
 
+LittleTarget
+Orange
+.....
+.000.
+.0.0.
+.000.
+.....
 
-Target
-DarkBlue
+BigTarget
+LightBlue
+.....
+.000.
+.0.0.
+.000.
+.....
+
+FusedTarget
+lightgreen
 .....
 .000.
 .0.0.
@@ -166,8 +180,9 @@ LEGEND
 . = Background
 # = Wall
 * = LittleCrate
-@ = LittleCrate and Target
-O = Target
+O = LittleTarget
+I = BigTarget 
+P = FusedTarget 
 H = UnHammer
 S = UnSaw
 A = UnAcid
@@ -189,7 +204,8 @@ Player = Hplayer or Cplayer or Splayer or Aplayer
 (Define tool types)
 Tool = UnHammer or UnSaw or Coffee or UnAcid
 
-(Define Crate Types)
+(Define Target Types)
+Target = LittleTarget or BigTarget or FusedTarget 
 
 
 =======
@@ -282,7 +298,9 @@ horizontal[scrate | ... | FusedCrate] -> [scrate | ... | < FusedCrate]
 WINCONDITIONS
 ==============
 
-All Target on Crate
+All LittleTarget on LittleCrate
+All BigTarget on BigCrate
+All FusedTarget on FusedCrate
 Some Cplayer
 
 =======
@@ -290,18 +308,18 @@ LEVELS
 =======
 
 Message You are an un-construction worker. Tools may not work as you may expect.
-Message You must put all the boxes on their targets, and finish your day with a cup of coffee in hand.
+Message You must put all the boxes on their same-colored targets, and finish your day with a cup of coffee in hand.
 
 (Debugging level)
-#############
-#1..........#
+(#############
+#1.........A#
 #...*.......#
+#.....*B....#
+#...H...B...#
 #...........#
-#...H.......#
 #...........#
-#...........#
-#.......O...#
-#############
+#...P.I.O...#
+#############)
 
 (Unhammer Tutorial)
 ###########
@@ -321,6 +339,7 @@ Message You must put all the boxes on their targets, and finish your day with a 
 #.s.#o#...#
 #...#.#...#
 #....*....#
+###########
 
 (UnAcid Tutorial)
 ###########
