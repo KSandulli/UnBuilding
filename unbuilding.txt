@@ -199,11 +199,11 @@ black lightblue
 
 UnAcid
 black lightgreen
-..0..
+.000.
 .111.
 11111
 11111
-.111.
+11111
 
 UnCrowbar
 black red
@@ -391,7 +391,52 @@ LEVELS
 Message You are an un-construction worker. Tools may not work as you may expect.
 Message You must put all the boxes on their same-colored targets, and finish your day with a cup of coffee in hand.
 
-(UnChain debugging)
+(Tutorial message)
+Message Your first tool is the UnHammer.
+Message This tool will pull orange crates toward you through other crates.
+Message Please note: holding the coffee is the only way to push orange crates normally.
+
+(Unhammer Tutorial)
+###########
+#1...*#...#
+#....*#...#
+#....*#O.*#
+#....*#...#
+#H...*#...#
+###########
+
+Message Great progress! Next is the UnSaw.
+Message This will pull crates perpendicular from it toward another orange crate.
+
+(UnSaw Tutorial)
+###########
+#...#*#...#
+#.4.#.#.c.#
+#...#o#...#
+#....*#..*#
+#.s.#o#...#
+#...#.#...#
+#....*....#
+###########
+
+Message TANGIBLE PROGRESS!!!!!!!!!!!1!
+Message Next is the UnAcid. This will allow two crates next to each other to be fused together.
+Message These "Fused crates" will fill in holes. Note: Blue boxes cannot be moved by themselves.
+
+(UnAcid Tutorial)
+###########
+#...*O....#
+#.........#
+#000000000#
+#.........#
+#...B*....#
+#1.......A#
+###########
+
+Message You're so good at this.
+Message Finally is the UnCrowbar. This will allow you to merge touching crates into one big crate.
+
+(UnChain Tutorial)
 #############
 #...j.......#
 #...........#
@@ -401,6 +446,8 @@ Message You must put all the boxes on their same-colored targets, and finish you
 #....#*..R..#
 #....#......#
 #############
+
+Message Great! I can't help you from now on, so good luck!
 
 (Debugging level)
 (#############
@@ -452,36 +499,6 @@ Message You must put all the boxes on their same-colored targets, and finish you
 #...b0.............#
 #....0.............#
 ####################
-
-(Unhammer Tutorial)
-###########
-#1...*#...#
-#....*#...#
-#....*#O.*#
-#....*#...#
-#H...*#...#
-###########
-
-(UnSaw Tutorial)
-###########
-#...#*#...#
-#.4.#.#.c.#
-#...#o#...#
-#....*#..*#
-#.s.#o#...#
-#...#.#...#
-#....*....#
-###########
-
-(UnAcid Tutorial)
-###########
-#...*O....#
-#.........#
-#000000000#
-#.........#
-#...B*....#
-#1.......A#
-###########
 
 (It's a mystery!)
 ######################################
