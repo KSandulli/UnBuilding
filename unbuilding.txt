@@ -100,6 +100,14 @@ Black Orange White Blue Gray yellow lightgreen
 .333.
 .3.3.
 
+Jplayer
+Black Orange White Blue Gray yellow black red
+.5556
+.4447
+21216
+.333.
+.3.3.
+
 Scrate
 Orange Yellow
 00000
@@ -140,6 +148,30 @@ black
 00000
 00000
 
+RigidCrate
+red blue
+00100
+01110
+11011
+01110
+00100
+
+RigidToLittleCrate (aux crate for rigid -> little transition)
+red blue
+00100
+01110
+11011
+01110
+00100
+
+LittleToRigidCrate (aux crate for little -> rigid transition)
+orange
+00000
+0...0
+0...0
+0...0
+00000
+
 
 UnHammer
 black lightbrown
@@ -165,6 +197,14 @@ black lightgreen
 11111
 .111.
 
+UnCrowbar
+black red
+.0000
+.00.0
+.11..
+.11..
+000..
+
 Coffee
 lightgray lightbrown white
 22222
@@ -186,6 +226,7 @@ P = FusedTarget
 H = UnHammer
 S = UnSaw
 A = UnAcid
+J = UnCrowbar
 C = Coffee
 B = BigCrate
 0 = Hole
@@ -194,15 +235,17 @@ B = BigCrate
 2 = Hplayer
 3 = Splayer
 4 = Aplayer
+5 = Jplayer
 
 (Define crate types)
-Crate = LittleCrate or BigCrate or FusedCrate
+Crate = LittleCrate or BigCrate or FusedCrate or RigidCrate or LittleToRigidCrate or RigidToLittleCrate
+
 
 (Define Player types)
-Player = Hplayer or Cplayer or Splayer or Aplayer
+Player = Hplayer or Cplayer or Splayer or Aplayer or Jplayer
 
 (Define tool types)
-Tool = UnHammer or UnSaw or Coffee or UnAcid
+Tool = UnHammer or UnSaw or Coffee or UnAcid or UnCrowbar
 
 (Define Target Types)
 Target = LittleTarget or BigTarget or FusedTarget 
@@ -217,7 +260,7 @@ sfx0 24230102 (UnHammer)
 sfx1 69271902 (UnSaw)
 sfx2 88628902 (UnAcid)
 sfx3 529705 (Coffee)
-
+sfx4 529705 (UnCrowbar)
 
 ================
 COLLISIONLAYERS
@@ -235,7 +278,7 @@ RULES
 
 [PlayerStart] -> [Cplayer]
 
-[ >  CPlayer | Crate ] -> [  >  CPlayer | > Crate  ]
+[ >  CPlayer | Crate no RigidCrate ] -> [  >  CPlayer | > Crate  ]
 [ >  APlayer | Crate ] -> [  >  APlayer | > Crate  ]
 
 (Transformation Rules
@@ -245,18 +288,28 @@ RULES
 [action Cplayer UnHammer] 	-> [Hplayer Coffee] sfx0
 [action Cplayer UnSaw] 		-> [Splayer Coffee] sfx1
 [action Cplayer UnAcid]     -> [Aplayer Coffee] sfx2
+[action Cplayer UnCrowbar]  -> [Jplayer Coffee] sfx4
 
 [action Hplayer Coffee] 	-> [Cplayer UnHammer] sfx3
 [action Hplayer UnSaw] 		-> [Splayer UnHammer] sfx1
 [action Hplayer UnAcid]   	-> [Aplayer UnHammer] sfx2
+[action Hplayer UnCrowbar]  -> [Jplayer UnHammer] sfx4
 
 [action Splayer Coffee] 	-> [Cplayer UnSaw] sfx3
 [action Splayer UnHammer] 	-> [Hplayer UnSaw] sfx0
 [action Splayer UnAcid] 	-> [Aplayer UnSaw] sfx2
+[action Splayer UnCrowbar] 	-> [Jplayer UnSaw] sfx4
 
 [action Aplayer Coffee] 	-> [Cplayer UnAcid] sfx3
 [action Aplayer UnHammer] 	-> [Hplayer UnAcid] sfx0
 [action Aplayer UnSaw] 		-> [Splayer UnAcid] sfx1
+[action Aplayer UnCrowbar] 	-> [Jplayer UnAcid] sfx4
+
+
+[action Jplayer Coffee] 	-> [Cplayer UnCrowbar] sfx3
+[action Jplayer UnHammer] 	-> [Hplayer UnCrowbar] sfx0
+[action Jplayer UnSaw] 		-> [Splayer UnCrowbar] sfx1
+[action Jplayer UnAcid] 	-> [Splayer UnCrowbar] sfx2
 
 
 (UnHammer player rules)
@@ -295,6 +348,24 @@ horizontal[scrate | ... | Crate] -> [scrate | ... | < Crate]
 (Hole rules)
 [> FusedCrate | Hole ] -> [|]
 
+(UnCrowbar rules - makes a group of consecutive crates a single RigidCrate)
+
+[action Jplayer | LittleCrate] -> [ Jplayer | LittleToRigidCrate] (transform initial crate into rigid crate)
++[LittleToRigidCrate | LittleCrate] -> [LittleToRigidCrate | LittleToRigidCrate] (each crate transforms its neighbors)
+
+[LittleToRigidCrate] -> [RigidCrate] (transforms all crates at once)
+
+[action Jplayer | RigidCrate] -> [ Jplayer | RigidToLittleCrate] (transform initial crate into little crate)
++[RigidToLittleCrate | RigidCrate] -> [RigidToLittleCrate | RigidToLittleCrate] (each crate transforms its neighbors)
+
+[RigidToLittleCrate] -> [LittleCrate] (transforms all crates at once)
+
+
+
+[ >  Jplayer | RigidCrate ] -> [  >  Jplayer | > RigidCrate  ] (RigidCrate movement)
++ rigid [ moving RigidCrate | RigidCrate ] -> [ moving RigidCrate | moving RigidCrate ] 
+
+
 WINCONDITIONS
 ==============
 
@@ -309,6 +380,17 @@ LEVELS
 
 Message You are an un-construction worker. Tools may not work as you may expect.
 Message You must put all the boxes on their same-colored targets, and finish your day with a cup of coffee in hand.
+
+(UnChain debugging)
+#############
+#...j.......#
+#...........#
+#1..........#
+#.....*..o..#
+#..*........#
+#....#*..o..#
+#....#......#
+#############
 
 (Debugging level)
 (#############
