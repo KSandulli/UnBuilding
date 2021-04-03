@@ -44,6 +44,14 @@ LightBlue
 .000.
 .....
 
+RigidTarget
+red blue 
+.....
+.010.
+.1.1.
+.010.
+.....
+
 FusedTarget
 lightgreen
 .....
@@ -142,11 +150,11 @@ lightgreen
 
 Hole
 black
+..0..
+.000.
 00000
-00000
-00000
-00000
-00000
+.000.
+..0..
 
 RigidCrate
 red blue
@@ -190,12 +198,12 @@ black lightblue
 .00..
 
 UnAcid
-black lightgreen
-..0..
-.111.
-11111
-11111
-.111.
+white lightgreen
+0..00
+0110.
+0110.
+0110.
+0000.
 
 UnCrowbar
 black red
@@ -222,7 +230,8 @@ LEGEND
 * = LittleCrate
 O = LittleTarget
 I = BigTarget 
-P = FusedTarget 
+P = FusedTarget
+R = RigidTarget
 H = UnHammer
 S = UnSaw
 A = UnAcid
@@ -248,7 +257,7 @@ Player = Hplayer or Cplayer or Splayer or Aplayer or Jplayer
 Tool = UnHammer or UnSaw or Coffee or UnAcid or UnCrowbar
 
 (Define Target Types)
-Target = LittleTarget or BigTarget or FusedTarget 
+Target = LittleTarget or BigTarget or FusedTarget or RigidTarget
 
 
 =======
@@ -261,6 +270,10 @@ sfx1 69271902 (UnSaw)
 sfx2 88628902 (UnAcid)
 sfx3 529705 (Coffee)
 sfx4 529705 (UnCrowbar)
+sfx5 39467907 (Fill Hole)
+sfx6 49722504 (Fuse Crates)
+sfx7 39455102 (Rigid to LittleCrates)
+sfx8 42963902 (LittleCrates to Rigid)
 
 ================
 COLLISIONLAYERS
@@ -278,8 +291,8 @@ RULES
 
 [PlayerStart] -> [Cplayer]
 
-[ >  CPlayer | Crate no RigidCrate ] -> [  >  CPlayer | > Crate  ]
-[ >  APlayer | Crate ] -> [  >  APlayer | > Crate  ]
+[ >  CPlayer | LittleCrate no RigidCrate ] -> [  >  CPlayer | > LittleCrate  ]
+[ >  APlayer | FusedCrate ] -> [  >  APlayer | > FusedCrate  ]
 
 (Transformation Rules
 - Couldn't figure out how to make this more generic
@@ -343,14 +356,14 @@ horizontal[scrate | ... | Crate] -> [scrate | ... | < Crate]
 [> crate | tool] -> [crate | tool]
 
 (UnAcid rules  - fuses crates together that can fill in holes)
-[Aplayer | Crate | Crate] -> [Aplayer | FusedCrate |]
+[> Aplayer | Crate | Crate] -> [Aplayer |  | FusedCrate] sfx6
 
 (Hole rules)
-[> FusedCrate | Hole ] -> [|]
+[> FusedCrate | Hole ] -> [|] sfx5
 
 (UnCrowbar rules - makes a group of consecutive crates a single RigidCrate)
 
-[action Jplayer | LittleCrate] -> [ Jplayer | LittleToRigidCrate] (transform initial crate into rigid crate)
+[action Jplayer | LittleCrate] -> [ Jplayer | LittleToRigidCrate] sfx8 (transform initial crate into rigid crate)
 +[LittleToRigidCrate | LittleCrate] -> [LittleToRigidCrate | LittleToRigidCrate] (each crate transforms its neighbors)
 
 [LittleToRigidCrate] -> [RigidCrate] (transforms all crates at once)
@@ -358,7 +371,7 @@ horizontal[scrate | ... | Crate] -> [scrate | ... | < Crate]
 [action Jplayer | RigidCrate] -> [ Jplayer | RigidToLittleCrate] (transform initial crate into little crate)
 +[RigidToLittleCrate | RigidCrate] -> [RigidToLittleCrate | RigidToLittleCrate] (each crate transforms its neighbors)
 
-[RigidToLittleCrate] -> [LittleCrate] (transforms all crates at once)
+[RigidToLittleCrate] -> [LittleCrate] sfx7 (transforms all crates at once)
 
 
 
@@ -372,6 +385,7 @@ WINCONDITIONS
 All LittleTarget on LittleCrate
 All BigTarget on BigCrate
 All FusedTarget on FusedCrate
+All RigidTarget on RigidCrate
 Some Cplayer
 
 =======
@@ -381,6 +395,7 @@ LEVELS
 Message You are an un-construction worker. Tools may not work as you may expect.
 Message You must put all the boxes on their same-colored targets, and finish your day with a cup of coffee in hand.
 
+<<<<<<< HEAD
 (UnCrowbar levels)
 
 	(moving boxes stucked on walls)
@@ -593,6 +608,8 @@ Message You must put all the boxes on their same-colored targets, and finish you
 #...P.I.O...#
 #############)
 
+=======
+>>>>>>> 3250fcf275377e9fcb5e7b71e28eab6690f5dd2b
 (Unhammer Tutorial)
 ###########
 #1...*#...#
@@ -622,6 +639,84 @@ Message You must put all the boxes on their same-colored targets, and finish you
 #...B*....#
 #1.......A#
 ###########
+
+(UnChain Tutorial)
+#############
+#...j.......#
+#...........#
+#1..........#
+#.....*..R..#
+#..*........#
+#....#*..R..#
+#....#......#
+#############
+
+(Debugging level)
+(#############
+#1.........A#
+#...*.......#
+#.....*B....#
+#...H...B...#
+#...........#
+#...........#
+#...P.I.O...#
+#############)
+
+(Soapy's first level)
+####################
+#.#.....#.#........#
+#.#.....#.#........#
+#.#.....#.#........#
+#.*#..............b#
+#.#######.##########
+#.......#.#........#
+#.......#i#........#
+#.......###........#
+#hs..1...b.........#
+####################
+
+
+(soapy's second level)
+####################
+#1.#.......a.......#
+#..#.#.............#
+#..#.#.............#
+#.*#.#.*.*..b......#
+#..#o#...*..b......#
+#..#.#...*..b......#
+#..#.#.............#
+#..#.############00#
+#...o....s........p#
+####################
+
+(soapy's third level)
+####################
+#1sh#a.............#
+#...#*#.*..........#
+#.....0.....000....#
+#....0.....0...0...#
+#....*0..b.0.o.0...#
+#.*..0.....0...0...#
+#....0......000....#
+#...b0.............#
+#....0.............#
+####################
+
+(Soapy's fourth level)
+#####################
+#........#*#........#
+#.j......s..........#
+#...................#
+##.................##
+#*....bb...........r#
+##.................r#
+#..................r#
+#h.................##
+#.a.................#
+#...1....#*#........#
+#####################
+
+
 
 (It's a mystery!)
 ######################################
