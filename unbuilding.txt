@@ -300,10 +300,10 @@ LEVELS
 =======
 
 Message You are an un-construction worker. Tools may not work as you may expect.
-Message You must put all the boxes on their targets, and finish your day with a cup of coffee in hand.
+Message You must put all the boxes on their same-colored targets, and finish your day with a cup of coffee in hand.
 
 (Debugging level)
-#############
+(#############
 #1.........A#
 #...*.......#
 #.....*B....#
@@ -311,17 +311,17 @@ Message You must put all the boxes on their targets, and finish your day with a 
 #...........#
 #...........#
 #...P.I.O...#
-#############
+#############)
 
-(UnSaw debugging)
+(UnSaw Tutorial)
 #############
 #...........#
-#c..********#
-#...O.......#
-#..3*....*..#
-#.*.*.......#
-#H..*******.#
-#...........#
+####*########
+#...o#......#
+#1..*#......#
+#...*#......#
+#s..*#......#
+#....#......#
 #############
 
 
