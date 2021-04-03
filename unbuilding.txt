@@ -287,7 +287,7 @@ RULES
 
 [PlayerStart] -> [Cplayer]
 
-[ >  CPlayer | Crate no RigidCrate ] -> [  >  CPlayer | > Crate  ]
+[ >  CPlayer | LittleCrate no RigidCrate ] -> [  >  CPlayer | > LittleCrate  ]
 [ >  APlayer | FusedCrate ] -> [  >  APlayer | > FusedCrate  ]
 
 (Transformation Rules
