@@ -225,6 +225,12 @@ I = BigTarget
 P = FusedTarget
 R = RigidTarget
 
+(occupied targets)
+@ = LittleTarget and LittleCrate
+T = BigTarget and BigCrate
+U = FusedTarget and FusedCrate
+D = RigidTarget and RigidCrate
+
 (players)
 1 = Cplayer
 2 = Hplayer
