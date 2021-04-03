@@ -44,6 +44,14 @@ LightBlue
 .000.
 .....
 
+RigidTarget
+red blue 
+.....
+.010.
+.1.1.
+.010.
+.....
+
 FusedTarget
 lightgreen
 .....
@@ -222,7 +230,8 @@ LEGEND
 * = LittleCrate
 O = LittleTarget
 I = BigTarget 
-P = FusedTarget 
+P = FusedTarget
+R = RigidTarget
 H = UnHammer
 S = UnSaw
 A = UnAcid
@@ -248,7 +257,7 @@ Player = Hplayer or Cplayer or Splayer or Aplayer or Jplayer
 Tool = UnHammer or UnSaw or Coffee or UnAcid or UnCrowbar
 
 (Define Target Types)
-Target = LittleTarget or BigTarget or FusedTarget 
+Target = LittleTarget or BigTarget or FusedTarget or RigidTarget
 
 
 =======
@@ -372,6 +381,7 @@ WINCONDITIONS
 All LittleTarget on LittleCrate
 All BigTarget on BigCrate
 All FusedTarget on FusedCrate
+All RigidTarget on RigidCrate
 Some Cplayer
 
 =======
@@ -386,9 +396,9 @@ Message You must put all the boxes on their same-colored targets, and finish you
 #...j.......#
 #...........#
 #1..........#
-#.....*..o..#
+#.....*..R..#
 #..*........#
-#....#*..o..#
+#....#*..R..#
 #....#......#
 #############
 
