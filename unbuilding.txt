@@ -250,24 +250,24 @@ RULES
 (UnSaw player rules
 Works by swapping out the targeted crates with a new crate type that will attract other crates.  Then swaps the crate back at the end. 
 	- This requires a set of rules for each crate type, and for horizontal/vertical positioning
-    - Right now this is configured so that you can only pull like crates, but could be changed to pull any crate fairly easily
+    - The saw will pull any crate type toward the sawed crate
     
 )
 
 horizontal [action splayer | LittleCrate] -> [splayer | Scrate]
-vertical [scrate | ... | LittleCrate] -> [scrate | ... | < LittleCrate]
+vertical [scrate | ... | Crate] -> [scrate | ... | < Crate]
 [scrate] -> [LittleCrate]
 
 vertical [action splayer | LittleCrate] -> [splayer | Scrate]
-horizontal [scrate | ... | LittleCrate] -> [scrate | ... | < LittleCrate]
+horizontal [scrate | ... | Crate] -> [scrate | ... | < Crate]
 [scrate] -> [LittleCrate]
 
 horizontal [action splayer | BigCrate] -> [splayer | Scrate]
-vertical [scrate | ... | BigCrate] -> [scrate | ... | < BigCrate]
+vertical [scrate | ... | Crate] -> [scrate | ... | < Crate]
 [scrate] -> [BigCrate]
 
 vertical[action splayer | FusedCrate] -> [splayer | Scrate]
-horizontal[scrate | ... | FusedCrate] -> [scrate | ... | < FusedCrate]
+horizontal[scrate | ... | Crate] -> [scrate | ... | < Crate]
 [scrate] -> [FusedCrate]
 
 (Crate interaction with tools)
