@@ -197,13 +197,12 @@ black lightblue
 .01..
 .00..
 
-UnAcid
-black lightgreen
-.000.
-.111.
-11111
-11111
-11111
+white lightgreen
+0..00
+0110.
+0110.
+0110.
+0000.
 
 UnCrowbar
 black red
