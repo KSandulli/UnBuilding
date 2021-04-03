@@ -1,0 +1,354 @@
+title Un-building
+author Team 2
+homepage www.puzzlescript.net
+youtube wDgQdr8ZkTw
+
+debug
+verbose_logging
+
+
+========
+OBJECTS
+========
+(
+Background
+LIGHTGREEN GREEN
+11111
+01111
+11101
+11111
+10111
+)
+
+
+background
+darkgray
+00000
+00000
+00000
+00000
+00000
+
+
+Target
+DarkBlue
+.....
+.000.
+.0.0.
+.000.
+.....
+
+Wall
+BROWN DARKBROWN
+00010
+11111
+01000
+11111
+00010
+
+PlayerStart
+Black Orange White Blue Gray yellow
+.555.
+.444.
+21212
+.333.
+.3.3.
+
+Hplayer
+Black Orange White Blue Gray yellow lightbrown
+.555.
+.4440
+21216
+.333.
+.3.3.
+
+Splayer
+Black Orange White Blue Gray yellow lightblue
+.5556
+.4446
+21210
+.333.
+.3.3.
+
+Cplayer
+Black Orange White Blue Gray yellow lightgray
+.555.
+.4442
+21216
+.333.
+.3.3.
+
+Aplayer
+Black Orange White Blue Gray yellow lightgreen
+.555.
+.4446
+21212
+.333.
+.3.3.
+
+Scrate
+Orange Yellow
+00000
+0.1.0
+01110
+0.1.0
+00000
+
+LittleCrate
+Orange Yellow
+00000
+0...0
+0...0
+0...0
+00000
+
+BigCrate
+LightBlue
+00000
+0...0
+0...0
+0...0
+00000
+
+FusedCrate
+lightgreen
+00000
+00000
+00000
+00000
+00000
+
+Hole
+black
+00000
+00000
+00000
+00000
+00000
+
+
+UnHammer
+black lightbrown
+.0000
+00000
+..1..
+..1..
+..1..
+
+UnSaw
+black lightblue
+.111.
+.11..
+.111.
+.01..
+.00..
+
+UnAcid
+black lightgreen
+..0..
+.111.
+11111
+11111
+.111.
+
+Coffee
+lightgray lightbrown white
+22222
+11111
+11111
+.000.
+.000.
+
+=======
+LEGEND
+=======
+
+. = Background
+# = Wall
+* = LittleCrate
+@ = LittleCrate and Target
+O = Target
+H = UnHammer
+S = UnSaw
+A = UnAcid
+C = Coffee
+B = BigCrate
+0 = Hole
+
+1 = Cplayer
+2 = Hplayer
+3 = Splayer
+
+(Define crate types)
+Crate = LittleCrate or BigCrate or FusedCrate
+
+(Define Player types)
+Player = Hplayer or Cplayer or Splayer or Aplayer
+
+(Define tool types)
+Tool = UnHammer or UnSaw or Coffee or UnAcid
+
+(Define Crate Types)
+
+
+=======
+SOUNDS
+=======
+
+Crate MOVE 36772507
+sfx0 24230102 (UnHammer)
+sfx1 69271902 (UnSaw)
+sfx2 88628902 (UnAcid)
+sfx3 529705 (Coffee)
+
+
+================
+COLLISIONLAYERS
+================
+
+Background
+Target
+Tool
+Player, Wall, Crate, Scrate, Hole
+PlayerStart
+
+======
+RULES
+======
+
+[PlayerStart] -> [Cplayer]
+
+[ >  CPlayer | Crate ] -> [  >  CPlayer | > Crate  ]
+[ >  APlayer | Crate ] -> [  >  APlayer | > Crate  ]
+
+(Transformation Rules
+- Couldn't figure out how to make this more generic
+- Keep the number of tools low to not explode the number of transform rules
+)
+[action Cplayer UnHammer] 	-> [Hplayer Coffee] sfx0
+[action Cplayer UnSaw] 		-> [Splayer Coffee] sfx1
+[action Cplayer UnAcid]     -> [Aplayer Coffee] sfx2
+
+[action Hplayer Coffee] 	-> [Cplayer UnHammer] sfx3
+[action Hplayer UnSaw] 		-> [Splayer UnHammer] sfx1
+[action Hplayer UnAcid]   	-> [Aplayer UnHammer] sfx2
+
+[action Splayer Coffee] 	-> [Cplayer UnSaw] sfx3
+[action Splayer UnHammer] 	-> [Hplayer UnSaw] sfx0
+[action Splayer UnAcid] 	-> [Aplayer UnSaw] sfx2
+
+[action Aplayer Coffee] 	-> [Cplayer UnAcid] sfx3
+[action Aplayer UnHammer] 	-> [Hplayer UnAcid] sfx0
+[action Aplayer UnSaw] 		-> [Splayer UnAcid] sfx1
+
+
+(UnHammer player rules)
+[action Hplayer | crate | ... |crate] -> [Hplayer |crate| ... | < crate ]
+
+
+(UnSaw player rules
+Works by swapping out the targeted crates with a new crate type that will attract other crates.  Then swaps the crate back at the end. 
+	- This may may require special versions for each crate type :sadface:
+)
+[action splayer | LittleCrate] -> [splayer | Scrate]
+[scrate | ... | LittleCrate] -> [scrate | ... | < LittleCrate]
+[scrate] -> [LittleCrate]
+
+[action splayer | BigCrate] -> [splayer | Scrate]
+[scrate | ... | BigCrate] -> [scrate | ... | < BigCrate]
+[scrate] -> [BigCrate]
+
+[action splayer | FusedCrate] -> [splayer | Scrate]
+[scrate | ... | FusedCrate] -> [scrate | ... | < FusedCrate]
+[scrate] -> [FusedCrate]
+
+(Crate interaction with tools)
+[> crate | tool] -> [crate | tool]
+
+(UnAcid rules  - fuses crates together that can fill in holes)
+[Aplayer | Crate | Crate] -> [Aplayer | FusedCrate |]
+
+(Hole rules)
+[> FusedCrate | Hole ] -> [|]
+
+WINCONDITIONS
+==============
+
+All Target on Crate
+Some Cplayer
+
+=======
+LEVELS
+=======
+
+Message You are an un-construction worker. Tools may not work as you may expect.
+Message You must put all the boxes on their targets, and finish your day with a cup of coffee in hand.
+
+(Debugging level)
+#############
+#1..........#
+#...*.......#
+#...........#
+#...H.......#
+#...........#
+#...........#
+#.......O...#
+#############
+
+(UnSaw debugging)
+#############
+#...........#
+#c..********#
+#...O.......#
+#..3*....*..#
+#.*.*.......#
+#H..*******.#
+#...........#
+#############
+
+
+(Unhammer Tutorial)
+###########
+#1...*#...#
+#....*#...#
+#....*#O.*#
+#....*#...#
+#H...*#...#
+###########
+
+(UnAcid Tutorial)
+###########
+#...*O....#
+#.........#
+#000000000#
+#.........#
+#...B*....#
+#1.......A#
+###########
+
+(It's a mystery!)
+######################################
+#.........................OO...OO..OO#
+#..........OOOOOOO........OO...OO..OO#
+#.........O.......O.....OO..OO.OO..OO#
+#........O..OO.OO..O....OO..OO...OO..#
+#........O.O.OO.OO.O....OO..OO...OO..#
+#.......O..O.OO.OO..O................#
+#...O...O...OO.OO...O..O.............#
+#..O.OOOO...........OOO.O............#
+#.O..........OO.....O....O...........#
+#..O.OOO.....OO....OOOO.O............#
+#...O...O..........O...O.............#
+#.......O.........O..................#
+#........O........O..................#
+#........O.......O...................#
+#.........O.....O....................#
+#.........O.....O....................#
+#.........O.....O....................#
+#.........O....O.....................#
+#.........O...O......................#
+#.........O..O..............1........#
+#........O..O........................#
+#.......OOOO.........................#
+#....................................#
+######################################
