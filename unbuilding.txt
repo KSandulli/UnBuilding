@@ -1130,6 +1130,20 @@ level.$......
 #........s........#
 ###################
 
+(Soapy's Seventh level)
+##############
+###*#.....g.a#
+##.o......g..#
+##........g..#
+###.......g..#
+#j*..b....g..#
+###.......g..#
+##........g..#
+##........g..#
+##........g00#
+##1h......g0s#
+##############
+
 (It's a mystery!) 
 (Plenty of tools, ideally uses all of the blocks we put on targets in earlier levels)
 (Has X targets)
