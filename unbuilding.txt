@@ -5,21 +5,118 @@ homepage www.puzzlescript.net
 debug
 verbose_logging
 
-
 ========
 OBJECTS
 ========
-(
-Background
-LIGHTGREEN GREEN
-11111
-01111
-11101
-11111
-10111
-)
+
+(Level Counters)
+L
+White
+0....
+0....
+0....
+0....
+0000.
+
+E
+white
+.000.
+.0...
+.000.
+.0...
+.000.
+
+V
+white
+0...0
+0...0
+.0.0.
+.0.0.
+..0..
+
+(Level Numbers)
+Zero
+white
+0000.
+0..0.
+0..0.
+0..0.
+0000.
+
+One
+white
+..0..
+..0..
+..0..
+..0..
+..0..
+
+Two
+white
+.000.
+...0.
+.000.
+.0...
+.000.
+
+Three 
+white
+.000.
+...0.
+.000.
+...0.
+.000.
+
+Four
+white
+.0.0.
+.0.0.
+.000.
+...0.
+...0.
+
+Five
+white
+.000.
+.0...
+.000.
+...0.
+.000.
+
+Six
+white
+.000.
+.0...
+.000.
+.0.0.
+.000.
+
+Seven
+white
+.000.
+...0.
+...0.
+...0.
+...0.
+
+Eight
+white
+.000.
+.0.0.
+.000.
+.0.0.
+.000.
+
+Nine
+white
+.000.
+.0.0.
+.000.
+...0.
+.000.
 
 
+(environmental)
 background
 darkgray
 00000
@@ -27,38 +124,6 @@ darkgray
 00000
 00000
 00000
-
-LittleTarget
-Orange
-.....
-.000.
-.0.0.
-.000.
-.....
-
-BigTarget
-LightBlue
-.....
-.000.
-.0.0.
-.000.
-.....
-
-RigidTarget
-red blue 
-.....
-.010.
-.1.1.
-.010.
-.....
-
-FusedTarget
-lightgreen
-.....
-.000.
-.0.0.
-.000.
-.....
 
 Wall
 BROWN DARKBROWN
@@ -68,54 +133,15 @@ BROWN DARKBROWN
 11111
 00010
 
-PlayerStart
-Black Orange White Blue Gray yellow
-.555.
-.444.
-21212
-.333.
-.3.3.
+Hole
+black
+..0..
+.000.
+00000
+.000.
+..0..
 
-Hplayer
-Black Orange White Blue Gray yellow lightbrown
-.555.
-.4440
-21216
-.333.
-.3.3.
-
-Splayer
-Black Orange White Blue Gray yellow lightblue
-.5556
-.4446
-21210
-.333.
-.3.3.
-
-Cplayer
-Black Orange White Blue Gray yellow lightgray
-.555.
-.4442
-21216
-.333.
-.3.3.
-
-Aplayer
-Black Orange White Blue Gray yellow lightgreen
-.555.
-.4446
-21212
-.333.
-.3.3.
-
-Jplayer
-Black Orange White Blue Gray yellow black red
-.5556
-.4447
-21216
-.333.
-.3.3.
-
+(crates)
 Scrate
 Orange Yellow
 00000
@@ -148,14 +174,6 @@ lightgreen
 00000
 00000
 
-Hole
-black
-..0..
-.000.
-00000
-.000.
-..0..
-
 RigidCrate
 red blue
 00100
@@ -180,7 +198,81 @@ orange
 0...0
 00000
 
+(targets)
+LittleTarget
+Orange
+.....
+.000.
+.0.0.
+.000.
+.....
 
+BigTarget
+LightBlue
+.....
+.000.
+.0.0.
+.000.
+.....
+
+RigidTarget
+red blue 
+.....
+.010.
+.1.1.
+.010.
+.....
+
+FusedTarget
+lightgreen
+.....
+.000.
+.0.0.
+.000.
+.....
+
+(players)
+Cplayer
+Black Orange White Blue Gray yellow lightgray
+.555.
+.4442
+21216
+.333.
+.3.3.
+
+Hplayer
+Black Orange White Blue Gray yellow lightbrown
+.555.
+.4440
+21216
+.333.
+.3.3.
+
+Splayer
+Black Orange White Blue Gray yellow lightblue
+.5556
+.4446
+21210
+.333.
+.3.3.
+
+Aplayer
+Black Orange White Blue Gray yellow lightgreen
+.555.
+.4446
+21212
+.333.
+.3.3.
+
+Jplayer
+Black Orange White Blue Gray yellow black red
+.5556
+.4447
+21216
+.333.
+.3.3.
+
+(tools)
 UnHammer
 black lightbrown
 .0000
@@ -198,12 +290,12 @@ black lightblue
 .00..
 
 UnAcid
-black lightgreen
-.000.
-.111.
-11111
-11111
-11111
+white lightgreen
+0..00
+0110.
+0110.
+0110.
+0000.
 
 UnCrowbar
 black red
@@ -224,31 +316,60 @@ lightgray lightbrown white
 =======
 LEGEND
 =======
-
+(environmental)
 . = Background
 # = Wall
+0 = Hole
+
+(crates)
 * = LittleCrate
+B = BigCrate
+F = FusedCrate
+G = RigidCrate
+
+(targets)
 O = LittleTarget
 I = BigTarget 
 P = FusedTarget
 R = RigidTarget
-H = UnHammer
-S = UnSaw
-A = UnAcid
-J = UnCrowbar
-C = Coffee
-B = BigCrate
-0 = Hole
 
+(occupied targets)
+@ = LittleTarget and LittleCrate
+T = BigTarget and BigCrate
+U = FusedTarget and FusedCrate
+D = RigidTarget and RigidCrate
+
+(players)
 1 = Cplayer
 2 = Hplayer
 3 = Splayer
 4 = Aplayer
 5 = Jplayer
 
+(tools)
+H = UnHammer
+S = UnSaw
+A = UnAcid
+J = UnCrowbar
+C = Coffee
+
+(Numbers)
+Z = Zero
+! = One
+, = Two
+~ = Three 
+$ = Four
+% = Five
+? = Six 
+& = Seven
+/ = Eight 
+\ = Nine
+
+
+
+
 (Define crate types)
 Crate = LittleCrate or BigCrate or FusedCrate or RigidCrate or LittleToRigidCrate or RigidToLittleCrate
-
 
 (Define Player types)
 Player = Hplayer or Cplayer or Splayer or Aplayer or Jplayer
@@ -258,6 +379,10 @@ Tool = UnHammer or UnSaw or Coffee or UnAcid or UnCrowbar
 
 (Define Target Types)
 Target = LittleTarget or BigTarget or FusedTarget or RigidTarget
+
+(Level counter definitions)
+Letter = L or E or V
+Number = Zero or One or Two or Three or Four or Five or Six or Seven or Eight or Nine
 
 
 =======
@@ -270,6 +395,10 @@ sfx1 69271902 (UnSaw)
 sfx2 88628902 (UnAcid)
 sfx3 529705 (Coffee)
 sfx4 529705 (UnCrowbar)
+sfx5 39467907 (Fill Hole)
+sfx6 49722504 (Fuse Crates)
+sfx7 39455102 (Rigid to LittleCrates)
+sfx8 42963902 (LittleCrates to Rigid)
 
 ================
 COLLISIONLAYERS
@@ -279,13 +408,11 @@ Background
 Target
 Tool
 Player, Wall, Crate, Scrate, Hole
-PlayerStart
+Letter, Number
 
 ======
 RULES
 ======
-
-[PlayerStart] -> [Cplayer]
 
 [ >  CPlayer | LittleCrate no RigidCrate ] -> [  >  CPlayer | > LittleCrate  ]
 [ >  APlayer | FusedCrate ] -> [  >  APlayer | > FusedCrate  ]
@@ -314,11 +441,10 @@ RULES
 [action Aplayer UnSaw] 		-> [Splayer UnAcid] sfx1
 [action Aplayer UnCrowbar] 	-> [Jplayer UnAcid] sfx4
 
-
 [action Jplayer Coffee] 	-> [Cplayer UnCrowbar] sfx3
 [action Jplayer UnHammer] 	-> [Hplayer UnCrowbar] sfx0
 [action Jplayer UnSaw] 		-> [Splayer UnCrowbar] sfx1
-[action Jplayer UnAcid] 	-> [Splayer UnCrowbar] sfx2
+[action Jplayer UnAcid] 	-> [Aplayer UnCrowbar] sfx2
 
 
 (UnHammer player rules)
@@ -344,22 +470,30 @@ horizontal [action splayer | BigCrate] -> [splayer | Scrate]
 vertical [scrate | ... | Crate] -> [scrate | ... | < Crate]
 [scrate] -> [BigCrate]
 
+vertical [action splayer | BigCrate] -> [splayer | Scrate]
+horizontal [scrate | ... | Crate] -> [scrate | ... | < Crate]
+[scrate] -> [BigCrate]
+
+horizontal[action splayer | FusedCrate] -> [splayer | Scrate]
+vertical[scrate | ... | Crate] -> [scrate | ... | < Crate]
+[scrate] -> [FusedCrate]
+
 vertical[action splayer | FusedCrate] -> [splayer | Scrate]
 horizontal[scrate | ... | Crate] -> [scrate | ... | < Crate]
 [scrate] -> [FusedCrate]
 
-(Crate interaction with tools)
-[> crate | tool] -> [crate | tool]
 
 (UnAcid rules  - fuses crates together that can fill in holes)
-[> Aplayer | Crate | Crate] -> [Aplayer |  | FusedCrate]
+[> Aplayer | Crate | Crate] -> [Aplayer |  | FusedCrate] sfx6
+
 
 (Hole rules)
-[> FusedCrate | Hole ] -> [|]
+[> FusedCrate | Hole ] -> [|] sfx5
+
 
 (UnCrowbar rules - makes a group of consecutive crates a single RigidCrate)
 
-[action Jplayer | LittleCrate] -> [ Jplayer | LittleToRigidCrate] (transform initial crate into rigid crate)
+[action Jplayer | LittleCrate] -> [ Jplayer | LittleToRigidCrate] sfx8 (transform initial crate into rigid crate)
 +[LittleToRigidCrate | LittleCrate] -> [LittleToRigidCrate | LittleToRigidCrate] (each crate transforms its neighbors)
 
 [LittleToRigidCrate] -> [RigidCrate] (transforms all crates at once)
@@ -367,13 +501,16 @@ horizontal[scrate | ... | Crate] -> [scrate | ... | < Crate]
 [action Jplayer | RigidCrate] -> [ Jplayer | RigidToLittleCrate] (transform initial crate into little crate)
 +[RigidToLittleCrate | RigidCrate] -> [RigidToLittleCrate | RigidToLittleCrate] (each crate transforms its neighbors)
 
-[RigidToLittleCrate] -> [LittleCrate] (transforms all crates at once)
+[RigidToLittleCrate] -> [LittleCrate] sfx7 (transforms all crates at once)
 
 
 
 [ >  Jplayer | RigidCrate ] -> [  >  Jplayer | > RigidCrate  ] (RigidCrate movement)
 + rigid [ moving RigidCrate | RigidCrate ] -> [ moving RigidCrate | moving RigidCrate ] 
 
+
+(Prevent crates from landing on top of tools)
+[> crate | tool] -> [crate | tool]
 
 WINCONDITIONS
 ==============
@@ -391,22 +528,15 @@ LEVELS
 Message You are an un-construction worker. Tools may not work as you may expect.
 Message You must put all the boxes on their same-colored targets, and finish your day with a cup of coffee in hand.
 
-(Tutorial message)
-Message Your first tool is the UnHammer.
-Message This tool will pull orange crates toward you through other crates.
-Message Please note: holding the coffee is the only way to push orange crates normally.
-
 (Unhammer Tutorial)
 ###########
 #1...*#...#
 #....*#...#
-#....*#O.*#
+#....*#o.*#
 #....*#...#
-#H...*#...#
+#h...*#...#
 ###########
-
-Message Great progress! Next is the UnSaw.
-Message This will pull crates perpendicular from it toward another orange crate.
+level.!....
 
 (UnSaw Tutorial)
 ###########
@@ -418,10 +548,7 @@ Message This will pull crates perpendicular from it toward another orange crate.
 #...#.#...#
 #....*....#
 ###########
-
-Message TANGIBLE PROGRESS!!!!!!!!!!!1!
-Message Next is the UnAcid. This will allow two crates next to each other to be fused together.
-Message These "Fused crates" will fill in holes. Note: Blue boxes cannot be moved by themselves.
+level.,....
 
 (UnAcid Tutorial)
 ###########
@@ -432,22 +559,277 @@ Message These "Fused crates" will fill in holes. Note: Blue boxes cannot be move
 #...B*....#
 #1.......A#
 ###########
+level.~....
 
-Message You're so good at this.
-Message Finally is the UnCrowbar. This will allow you to merge touching crates into one big crate.
-
-(UnChain Tutorial)
+(UnCrowbar Tutorial)
 #############
 #...j.......#
 #...........#
-#1..........#
-#.....*..R..#
-#..*........#
-#....#*..R..#
+#1....*.....#
+#...........#
+#.......r...#
+#....#*.r...#
 #....#......#
 #############
+level.$......
 
-Message Great! I can't help you from now on, so good luck!
+(Soapy's sixth level)
+#########################
+#.*#..#........#...*#####
+#.##..#.....#####.#######
+#.*#..#.....#.....#######
+#.##..#..#####.##########
+#.*#..#..#.....##########
+#.##..#####.##.##########
+#.*#........#############
+#.##.####################
+#...*......*..*..*......#
+#....................000#
+#ha3.................0c@#
+#########################
+
+
+(Soapy's fifth level)
+#####################
+#.....#a@.##.*.#...r#
+#.....##.####.##....#
+#......#.#..........#
+##.....#.#.........##
+#*.................*#
+##.................##
+#...................#
+#..............s....#
+#*############.###00#
+#2..j...@.........0c#
+#####################
+
+(Soapy's fourth level)
+#####################
+#........#*#........#
+#.j......s..........#
+#...................#
+##.................##
+#*....bb...........r#
+##.................r#
+#..................r#
+#h.................##
+#.a.................#
+#...1....#*#........#
+#####################
+
+(UnCrowbar levels)
+
+	(moving boxes stucked on walls)
+(1)
+#############
+#...j.......#
+#...........#
+#.....1.....#
+#...........#
+#.....*.r...#
+#...*...r...#
+#....#*.r...#
+#############
+
+(2)
+#############
+#1..j...#*.r#
+#...........#
+#...........#
+#.....*...r.#
+#...........#
+#...........#
+#....#*.r...#
+#############
+
+(3)
+#############
+#1..j.......#
+#.......*...#
+#...........#
+#..........##
+#.......r..*#
+#...........#
+#....#*.r..r#
+#############
+
+(4)
+#############
+#1..j...#*.r#
+#####......##
+#####...o..##
+#o.*#..*...##
+#..........*#
+#...........#
+#.r.*#*.r..o#
+#############
+
+
+(5)
+#############
+#############
+#...*..r#####
+#j.###....o##
+#......##*.o#
+#.*.1..*#####
+#.......#####
+##*r#..r#####
+#############
+
+
+	(taking boxes out of walls)
+(1)
+#############
+#1..j.......#
+#...........#
+#........r..#
+#.....*.....#
+#..r........#
+#....*#.....#
+#....##.....#
+#############
+
+(2)
+#############
+#1..j.#.....#
+#.....#.r.r.#
+#.*...#..o..#
+#....###....#
+#...........#
+#....*#*....#
+#....###....#
+#############
+
+
+
+(3)
+#############
+#1..j.......#
+#...........#
+#......*..###
+#...o.....*##
+#..r.r....###
+#.*.o..*....#
+#...........#
+#############
+
+(4)
+#############
+#1..j.......#
+#...........#
+#..r.......*#
+#..r..*.....#
+#..r........#
+#.*.........#
+#...........#
+#############
+
+(5)
+#############
+#1..j.......#
+#.....*.....#
+#.........#*#
+#...r.r.....#
+#..r.r......#
+#.*.........#
+#........*..#
+#############
+
+
+
+
+
+	(moving boxes stuck on walls and taking boxes out of walls)
+
+
+
+(1)
+#############
+#1..jr#######
+#...*.#######
+#r.......**r#
+#or......*###
+###*.....####
+####*...o####
+#####*..o####
+#############
+
+
+
+(2)
+#############
+#1..j.....###
+#.........*##
+#..........##
+#######....r#
+#.......*####
+#.o..*#..#*r#
+#o..*##....r#
+#############
+
+
+(3)
+#############
+#############
+#...*.or#####
+#j.###.....o#
+#...*..####.#
+#o..1..*###.#
+#..###....*.#
+#.o....*#####
+#############
+
+	(escaping a box mess)
+    
+(1)
+
+#############
+#**1j**######
+#******######
+#..**..######
+#......*...r#
+#......######
+#......######
+###..########
+#############
+
+(2)
+
+#############
+#**1j**######
+#******######
+#**..**.*..r#
+#......######
+#.****.######
+#......######
+##....#######
+#############
+
+(3)
+
+#############
+##*1j*#o#...#
+##.**.#*#***#
+##****#..***#
+##....###...#
+##...*###...#
+##..*......r#
+##.*..###*.r#
+#############
+
+
+(Debugging level)
+(#############
+#1.........A#
+#...*.......#
+#.....*B....#
+#...H...B...#
+#...........#
+#...........#
+#...P.I.O...#
+#############)
+
+
 
 (Debugging level)
 (#############
@@ -499,6 +881,159 @@ Message Great! I can't help you from now on, so good luck!
 #...b0.............#
 #....0.............#
 ####################
+
+(Soapy's fourth level)
+#####################
+#........#*#........#
+#.j......s..........#
+#...................#
+##.................##
+#*....bb...........r#
+##.................r#
+#..................r#
+#h.................##
+#.a.................#
+#...1....#*#........#
+#####################
+
+(Unhammer Levels)
+
+
+#############(more of an extended tutorial than a puzzle)
+#..bi.1.ib..#
+#.####h####.#
+#...........#
+#############
+
+
+(Unsaw Levels)
+
+#########
+#......b#
+#......i#
+#.*.....#
+#.......#
+#...i..b#
+#.1.....#
+#.so....#
+#########
+
+###########
+#.#*#.#.#.#
+#..o..o..*#
+##.#.#.#.##
+#...s.....#
+#.#.#.#.#.#
+#*.o..@...#
+##.#.#.#.##
+#........1#
+###########
+
+############
+#b#..b...#b#
+#.s..1.....#
+#......i...#
+#..ii..ii..#
+#...i......#
+#..bbbbbb..#
+#..........#
+############
+
+#############
+#...........#
+#...........#
+#..#######..#
+#..#i.i..#..#
+#..#.o...#..#
+#..#..b*b#..#
+#s.#i.bib#..#
+#..#######..#
+#1...*......#
+#...........#
+#############
+
+###############
+#*.....*..#o..#
+#.*#...#..#.#.#
+#*.#..##..#.#.#
+#.*#.**...#*#.#
+#@o#.######@#.#
+#o@#....oo.*#.#
+#@o#...######.#
+#o@..1.s......#
+#.............#
+###############
+
+####################
+#..b#.....*b*b*b*b*#
+#...#.#.#.##########
+#...#.#.#o#........#
+#...#i#i#o#........#
+#...###o#i#........#
+#..1.b#o#o#........#
+#.....###i#........#
+#......b###........#
+#.s......b#........#
+####################
+
+(dpickler, saw hammer levels)
+#############
+#..*#....i.b#
+#..##.......#
+#s..#..o...*#
+#1..#.......#
+#h..#.......#
+#...#.......#
+#.#*#.......#
+#############
+
+###############
+#.............#
+#.1...........#
+#..h...*...s..#
+#...#######...#
+#...#*.o.*#...#
+#...#.*o*.#...#
+#..*#oo.oo#*..#
+#...#.*o*.#...#
+#...#*.o.*#...#
+#...#######...#
+#..s...*...h..#
+#.............#
+#.............#
+###############
+
+####################(lockpicking, saw only)
+#..b#.....*b*b*b*b*#
+#...#.#.#.##########
+#...#.#.#o#........#
+#...#i#i#o#........#
+#...###o#i#........#
+#..1.b#o#o#........#
+#.....###i#........#
+#......b###........#
+#.s......b#........#
+####################
+
+
+###################(locksmithing, hammer and saw)
+#.................#
+#........#bbbbbbbh#
+#s###############s#
+#.b#.....*.*......#
+#..#.#.#o#........#
+#..#i#o#.#.b...b..#
+#..#o#i#i#...*..b.#
+#..###o#o#.*...*..#
+#.1.b#o#.#.....*..#
+#...####i#.b..b...#
+#.....b#i#........#
+#.....####........#
+#.......b#........#
+#.......##........#
+#........s........#
+###################
+
 
 (It's a mystery!)
 ######################################
