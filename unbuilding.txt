@@ -856,8 +856,6 @@ Message You must put all the boxes on their same-colored targets, and finish you
 #........s........#
 ###################
 
-
-(It's a mystery!)
 (It's a mystery!) 
 (Plenty of tools, ideally uses all of the blocks we put on targets in earlier levels)
 (Has X targets)
