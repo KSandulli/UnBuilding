@@ -528,6 +528,16 @@ LEVELS
 Message You are an un-construction worker. Tools may not work as you may expect.
 Message You must put all the boxes on their same-colored targets, and finish your day with a cup of coffee in hand.
 
+(Coffe Tutorial)
+###########
+#2c.......#
+#...*.o...#
+#.*...o...#
+#.........#
+#..*..o...#
+###########
+level.!....
+
 (Unhammer Tutorial)
 ###########
 #1...*#...#
