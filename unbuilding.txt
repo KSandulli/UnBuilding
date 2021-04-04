@@ -8,6 +8,114 @@ verbose_logging
 ========
 OBJECTS
 ========
+
+(Level Counters)
+L
+White
+0....
+0....
+0....
+0....
+0000.
+
+E
+white
+.000.
+.0...
+.000.
+.0...
+.000.
+
+V
+white
+0...0
+0...0
+.0.0.
+.0.0.
+..0..
+
+(Level Numbers)
+Zero
+white
+0000.
+0..0.
+0..0.
+0..0.
+0000.
+
+One
+white
+..0..
+..0..
+..0..
+..0..
+..0..
+
+Two
+white
+.000.
+...0.
+.000.
+.0...
+.000.
+
+Three 
+white
+.000.
+...0.
+.000.
+...0.
+.000.
+
+Four
+white
+.0.0.
+.0.0.
+.000.
+...0.
+...0.
+
+Five
+white
+.000.
+.0...
+.000.
+...0.
+.000.
+
+Six
+white
+.000.
+.0...
+.000.
+.0.0.
+.000.
+
+Seven
+white
+.000.
+...0.
+...0.
+...0.
+...0.
+
+Eight
+white
+.000.
+.0.0.
+.000.
+.0.0.
+.000.
+
+Nine
+white
+.000.
+.0.0.
+.000.
+...0.
+.000.
+
+
 (environmental)
 background
 darkgray
@@ -245,6 +353,21 @@ A = UnAcid
 J = UnCrowbar
 C = Coffee
 
+(Numbers)
+Z = Zero
+! = One
+, = Two
+~ = Three 
+$ = Four
+% = Five
+? = Six 
+& = Seven
+/ = Eight 
+\ = Nine
+
+
+
+
 (Define crate types)
 Crate = LittleCrate or BigCrate or FusedCrate or RigidCrate or LittleToRigidCrate or RigidToLittleCrate
 
@@ -256,6 +379,10 @@ Tool = UnHammer or UnSaw or Coffee or UnAcid or UnCrowbar
 
 (Define Target Types)
 Target = LittleTarget or BigTarget or FusedTarget or RigidTarget
+
+(Level counter definitions)
+Letter = L or E or V
+Number = Zero or One or Two or Three or Four or Five or Six or Seven or Eight or Nine
 
 
 =======
@@ -281,6 +408,7 @@ Background
 Target
 Tool
 Player, Wall, Crate, Scrate, Hole
+Letter, Number
 
 ======
 RULES
@@ -316,7 +444,7 @@ RULES
 [action Jplayer Coffee] 	-> [Cplayer UnCrowbar] sfx3
 [action Jplayer UnHammer] 	-> [Hplayer UnCrowbar] sfx0
 [action Jplayer UnSaw] 		-> [Splayer UnCrowbar] sfx1
-[action Jplayer UnAcid] 	-> [Splayer UnCrowbar] sfx2
+[action Jplayer UnAcid] 	-> [Aplayer UnCrowbar] sfx2
 
 
 (UnHammer player rules)
@@ -400,6 +528,95 @@ LEVELS
 
 Message You are an un-construction worker. Tools may not work as you may expect.
 Message You must put all the boxes on their same-colored targets, and finish your day with a cup of coffee in hand.
+
+(Unhammer Tutorial)
+###########
+#1...*#...#
+#....*#...#
+#....*#o.*#
+#....*#...#
+#h...*#...#
+###########
+level.!....
+
+(UnSaw Tutorial)
+###########
+#...#*#...#
+#.4.#.#.c.#
+#...#o#...#
+#....*#..*#
+#.s.#o#...#
+#...#.#...#
+#....*....#
+###########
+level.,....
+
+(UnAcid Tutorial)
+###########
+#...*O....#
+#.........#
+#000000000#
+#.........#
+#...B*....#
+#1.......A#
+###########
+level.~....
+
+(UnCrowbar Tutorial)
+#############
+#...j.......#
+#...........#
+#1....*.....#
+#...........#
+#.......r...#
+#....#*.r...#
+#....#......#
+#############
+level.$......
+
+(Soapy's sixth level)
+#########################
+#.*#..#........#...*#####
+#.##..#.....#####.#######
+#.*#..#.....#.....#######
+#.##..#..#####.##########
+#.*#..#..#.....##########
+#.##..#####.##.##########
+#.*#........#############
+#.##.####################
+#...*......*..*..*......#
+#....................000#
+#ha3.................0c@#
+#########################
+
+
+(Soapy's fifth level)
+#####################
+#.....#a@.##.*.#...r#
+#.....##.####.##....#
+#......#.#..........#
+##.....#.#.........##
+#*.................*#
+##.................##
+#...................#
+#..............s....#
+#*############.###00#
+#2..j...@.........0c#
+#####################
+
+(Soapy's fourth level)
+#####################
+#........#*#........#
+#.j......s..........#
+#...................#
+##.................##
+#*....bb...........r#
+##.................r#
+#..................r#
+#h.................##
+#.a.................#
+#...1....#*#........#
+#####################
 
 (UnCrowbar levels)
 
@@ -613,46 +830,7 @@ Message You must put all the boxes on their same-colored targets, and finish you
 #...P.I.O...#
 #############)
 
-(Unhammer Tutorial)
-###########
-#1...*#...#
-#....*#...#
-#....*#O.*#
-#....*#...#
-#H...*#...#
-###########
 
-(UnSaw Tutorial)
-###########
-#...#*#...#
-#.4.#.#.c.#
-#...#o#...#
-#....*#..*#
-#.s.#o#...#
-#...#.#...#
-#....*....#
-###########
-
-(UnAcid Tutorial)
-###########
-#...*O....#
-#.........#
-#000000000#
-#.........#
-#...B*....#
-#1.......A#
-###########
-
-(UnCrowbar Tutorial)
-#############
-#...j.......#
-#...........#
-#1....*.....#
-#...........#
-#.......r...#
-#....#*.r...#
-#....#......#
-#############
 
 (Debugging level)
 (#############
