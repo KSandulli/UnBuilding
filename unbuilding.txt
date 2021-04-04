@@ -529,7 +529,7 @@ Message You are an un-construction worker. Tools may not work as you may expect.
 Message You must put all the boxes on their same-colored targets, and finish your day with a cup of coffee in hand.
 
 (Coffe Tutorial)
-###########
+########### (Small targets: 3) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 0)
 #2c.......#
 #...*.o...#
 #.*...o...#
@@ -666,34 +666,16 @@ level.$......
 #ha3.................0c@#
 #########################
 
+(Soapy's Seventh level ) (Small targets: 0) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 3) 
+###########
+#1........#
+#..br..g..#
+#....brg..#
+#..br..g..#
+#h........#
+###########
 
-((Repeat of level 4?) )
-(Soapy's Seventh level )
-#####################
-#........#*#........#
-#.j......s..........#
-#...................#
-##.................##
-#*....bb...........r#
-##.................r#
-#..................r#
-#h.................##
-#.a.................#
-#...1....#*#........#
-#####################
-
-(Copy of unhammer tutorial?)
 (Soapy's Eigth level )
-###########
-#1...*#...#
-#....*#...#
-#....*#o.*#
-#....*#...#
-#h...*#...#
-###########
-
-(needs coffee start?)
-(Soapy's Ninth level )
 ##################### (Small targets: 0) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 5)
 #................#ab#
 #.br.......bb0g..##.#
@@ -704,11 +686,10 @@ level.$......
 #...................#
 #...................#
 #..................b#
-#2.............s...p#
+#2c............s...p#
 #####################
 
-((Needs Coffee))
-(Soapy's Tenth level)
+(Soapy's Ninth level)
 ##################### (Small targets: 0) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 8)
 #.b#...gggggggg.....#
 #.b#........r.......#
@@ -719,7 +700,7 @@ level.$......
 #..##################
 #...bbbbbbbbbbbbbbbb#
 #...................#
-#2s.................#
+#2c.................#
 #####################
 
 (UnCrowbar levels)
