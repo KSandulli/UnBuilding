@@ -594,7 +594,7 @@ Message You must put all the boxes on their same-colored targets, and finish you
 #############
 ##*1j*#o#...#
 ##.**.#*#***#
-##*..*#..***#
+##****#..***#
 ##....###...#
 ##...*###...#
 ##..*......r#
@@ -643,14 +643,14 @@ Message You must put all the boxes on their same-colored targets, and finish you
 #1.......A#
 ###########
 
-(UnChain Tutorial)
+(UnCrowbar Tutorial)
 #############
 #...j.......#
 #...........#
-#1..........#
-#.....*..R..#
-#..*........#
-#....#*..R..#
+#1....*.....#
+#...........#
+#.......r...#
+#....#*.r...#
 #....#......#
 #############
 
