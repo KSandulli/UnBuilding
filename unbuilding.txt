@@ -401,7 +401,6 @@ LEVELS
 Message You are an un-construction worker. Tools may not work as you may expect.
 Message You must put all the boxes on their same-colored targets, and finish your day with a cup of coffee in hand.
 
-<<<<<<< HEAD
 (UnCrowbar levels)
 
 	(moving boxes stucked on walls)
@@ -614,8 +613,6 @@ Message You must put all the boxes on their same-colored targets, and finish you
 #...P.I.O...#
 #############)
 
-=======
->>>>>>> 3250fcf275377e9fcb5e7b71e28eab6690f5dd2b
 (Unhammer Tutorial)
 ###########
 #1...*#...#
