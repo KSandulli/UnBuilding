@@ -539,7 +539,7 @@ Message You must put all the boxes on their same-colored targets, and finish you
 level.!....
 
 (UnSaw Tutorial)
-########### (Small targets: 2) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 0)
+########### (Small targets: 2) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 0) 
 #...#*#...#
 #.4.#.#.c.#
 #...#o#...#
@@ -551,7 +551,7 @@ level.!....
 level.,....
 
 (UnAcid Tutorial)
-########### (Small targets: 1) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 0)
+########### (Small targets: 1) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 0) 
 #...*O....#
 #.........#
 #000000000#
@@ -562,7 +562,7 @@ level.,....
 level.~....
 
 (UnCrowbar Tutorial)
-############# (Small targets: 0) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 2)
+############# (Small targets: 0) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 2) 
 #...j.......#
 #...........#
 #1....*.....#
@@ -574,7 +574,7 @@ level.~....
 level.$......
 
 (Soapy's first level)
-#################### (Small targets: 0) (Big targets: 1) (Fused Targets: 0) (Rigid Targets: 0)
+#################### (Small targets: 0) (Big targets: 1) (Fused Targets: 0) (Rigid Targets: 0) 
 #.#.....#.#........#
 #.#.....#.#........#
 #.#.....#.#........#
@@ -588,7 +588,7 @@ level.$......
 
 
 (soapy's second level)
-#################### (Small targets: 2) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 0)
+#################### (Small targets: 2) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 0) 
 #1.#.......a.......#
 #..#.#.............#
 #..#.#.............#
@@ -601,7 +601,7 @@ level.$......
 ####################
 
 (soapy's third level)
-#################### (Small targets: 1) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 0)
+#################### (Small targets: 1) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 0) 
 #1sh#a.............#
 #...#*#.*..........#
 #.....0.....000....#
@@ -614,7 +614,7 @@ level.$......
 ####################
 
 (Soapy's fourth level)
-##################### (Small targets: 0) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 3)
+##################### (Small targets: 0) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 3) 
 #........#*#........#
 #.j......s..........#
 #...................#
@@ -628,7 +628,7 @@ level.$......
 #####################
 
 (Soapy's fifth level)
-##################### (Small targets: 2) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 1)
+##################### (Small targets: 2) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 1) 
 #.....#a@.##.*.#...r#
 #.....##.####.##....#
 #......#.#..........#
@@ -642,7 +642,7 @@ level.$......
 #####################
 
 (Soapy's sixth level)
-######################### (Small targets: 1) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 0)
+######################### (Small targets: 1) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 0) 
 #.*#..#........#...*#####
 #.##..#.....#####.#######
 #.*#..#.....#.....#######
@@ -656,7 +656,9 @@ level.$......
 #ha3.................0c@#
 #########################
 
-(Soapy's Seventh level)
+
+((Repeat of level 4?) )
+(Soapy's Seventh level )
 #####################
 #........#*#........#
 #.j......s..........#
@@ -670,7 +672,8 @@ level.$......
 #...1....#*#........#
 #####################
 
-(Soapy's Eigth level)
+(Copy of unhammer tutorial?)
+(Soapy's Eigth level )
 ###########
 #1...*#...#
 #....*#...#
@@ -679,8 +682,9 @@ level.$......
 #h...*#...#
 ###########
 
-(Soapy's Ninth level)
-#####################
+(needs coffee start?)
+(Soapy's Ninth level )
+##################### (Small targets: 0) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 5)
 #................#ab#
 #.br.......bb0g..##.#
 #.......br.bb0g.....#
@@ -693,8 +697,9 @@ level.$......
 #2.............s...p#
 #####################
 
+((Needs Coffee))
 (Soapy's Tenth level)
-#####################
+##################### (Small targets: 0) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 8)
 #.b#...gggggggg.....#
 #.b#........r.......#
 #.b#........#r......#
@@ -1155,10 +1160,11 @@ level.$......
 #........s........#
 ###################
 
+
 (It's a mystery!) 
 (Plenty of tools, ideally uses all of the blocks we put on targets in earlier levels)
-(Has X targets)
-###hsajc################hsajc#################hsajc### (Has 184 targets)
+(Has 184 targets) (Small targets: 73) (Big targets: 25) (Fused Targets: 15) (Rigid Targets: 62)
+###hsajc################hsajc#################hsajc###
 #....................................................#
 #..........ooooooo...................................#
 #.........o.......o..................................#
