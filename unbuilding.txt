@@ -1158,7 +1158,7 @@ level.$......
 (It's a mystery!) 
 (Plenty of tools, ideally uses all of the blocks we put on targets in earlier levels)
 (Has X targets)
-###hsajc################hsajc#################hsajc###
+###hsajc################hsajc#################hsajc### (Has 184 targets)
 #....................................................#
 #..........ooooooo...................................#
 #.........o.......o..................................#
