@@ -5,21 +5,10 @@ homepage www.puzzlescript.net
 debug
 verbose_logging
 
-
 ========
 OBJECTS
 ========
-(
-Background
-LIGHTGREEN GREEN
-11111
-01111
-11101
-11111
-10111
-)
-
-
+(environmental)
 background
 darkgray
 00000
@@ -27,38 +16,6 @@ darkgray
 00000
 00000
 00000
-
-LittleTarget
-Orange
-.....
-.000.
-.0.0.
-.000.
-.....
-
-BigTarget
-LightBlue
-.....
-.000.
-.0.0.
-.000.
-.....
-
-RigidTarget
-red blue 
-.....
-.010.
-.1.1.
-.010.
-.....
-
-FusedTarget
-lightgreen
-.....
-.000.
-.0.0.
-.000.
-.....
 
 Wall
 BROWN DARKBROWN
@@ -68,54 +25,15 @@ BROWN DARKBROWN
 11111
 00010
 
-PlayerStart
-Black Orange White Blue Gray yellow
-.555.
-.444.
-21212
-.333.
-.3.3.
+Hole
+black
+..0..
+.000.
+00000
+.000.
+..0..
 
-Hplayer
-Black Orange White Blue Gray yellow lightbrown
-.555.
-.4440
-21216
-.333.
-.3.3.
-
-Splayer
-Black Orange White Blue Gray yellow lightblue
-.5556
-.4446
-21210
-.333.
-.3.3.
-
-Cplayer
-Black Orange White Blue Gray yellow lightgray
-.555.
-.4442
-21216
-.333.
-.3.3.
-
-Aplayer
-Black Orange White Blue Gray yellow lightgreen
-.555.
-.4446
-21212
-.333.
-.3.3.
-
-Jplayer
-Black Orange White Blue Gray yellow black red
-.5556
-.4447
-21216
-.333.
-.3.3.
-
+(crates)
 Scrate
 Orange Yellow
 00000
@@ -148,14 +66,6 @@ lightgreen
 00000
 00000
 
-Hole
-black
-..0..
-.000.
-00000
-.000.
-..0..
-
 RigidCrate
 red blue
 00100
@@ -180,7 +90,81 @@ orange
 0...0
 00000
 
+(targets)
+LittleTarget
+Orange
+.....
+.000.
+.0.0.
+.000.
+.....
 
+BigTarget
+LightBlue
+.....
+.000.
+.0.0.
+.000.
+.....
+
+RigidTarget
+red blue 
+.....
+.010.
+.1.1.
+.010.
+.....
+
+FusedTarget
+lightgreen
+.....
+.000.
+.0.0.
+.000.
+.....
+
+(players)
+Cplayer
+Black Orange White Blue Gray yellow lightgray
+.555.
+.4442
+21216
+.333.
+.3.3.
+
+Hplayer
+Black Orange White Blue Gray yellow lightbrown
+.555.
+.4440
+21216
+.333.
+.3.3.
+
+Splayer
+Black Orange White Blue Gray yellow lightblue
+.5556
+.4446
+21210
+.333.
+.3.3.
+
+Aplayer
+Black Orange White Blue Gray yellow lightgreen
+.555.
+.4446
+21212
+.333.
+.3.3.
+
+Jplayer
+Black Orange White Blue Gray yellow black red
+.5556
+.4447
+21216
+.333.
+.3.3.
+
+(tools)
 UnHammer
 black lightbrown
 .0000
@@ -224,31 +208,45 @@ lightgray lightbrown white
 =======
 LEGEND
 =======
-
+(environmental)
 . = Background
 # = Wall
+0 = Hole
+
+(crates)
 * = LittleCrate
+B = BigCrate
+F = FusedCrate
+G = RigidCrate
+
+(targets)
 O = LittleTarget
 I = BigTarget 
 P = FusedTarget
 R = RigidTarget
-H = UnHammer
-S = UnSaw
-A = UnAcid
-J = UnCrowbar
-C = Coffee
-B = BigCrate
-0 = Hole
 
+(occupied targets)
+@ = LittleTarget and LittleCrate
+T = BigTarget and BigCrate
+U = FusedTarget and FusedCrate
+D = RigidTarget and RigidCrate
+
+(players)
 1 = Cplayer
 2 = Hplayer
 3 = Splayer
 4 = Aplayer
 5 = Jplayer
 
+(tools)
+H = UnHammer
+S = UnSaw
+A = UnAcid
+J = UnCrowbar
+C = Coffee
+
 (Define crate types)
 Crate = LittleCrate or BigCrate or FusedCrate or RigidCrate or LittleToRigidCrate or RigidToLittleCrate
-
 
 (Define Player types)
 Player = Hplayer or Cplayer or Splayer or Aplayer or Jplayer
@@ -283,13 +281,10 @@ Background
 Target
 Tool
 Player, Wall, Crate, Scrate, Hole
-PlayerStart
 
 ======
 RULES
 ======
-
-[PlayerStart] -> [Cplayer]
 
 [ >  CPlayer | LittleCrate no RigidCrate ] -> [  >  CPlayer | > LittleCrate  ]
 [ >  APlayer | FusedCrate ] -> [  >  APlayer | > FusedCrate  ]
@@ -317,7 +312,6 @@ RULES
 [action Aplayer UnHammer] 	-> [Hplayer UnAcid] sfx0
 [action Aplayer UnSaw] 		-> [Splayer UnAcid] sfx1
 [action Aplayer UnCrowbar] 	-> [Jplayer UnAcid] sfx4
-
 
 [action Jplayer Coffee] 	-> [Cplayer UnCrowbar] sfx3
 [action Jplayer UnHammer] 	-> [Hplayer UnCrowbar] sfx0
@@ -348,18 +342,30 @@ horizontal [action splayer | BigCrate] -> [splayer | Scrate]
 vertical [scrate | ... | Crate] -> [scrate | ... | < Crate]
 [scrate] -> [BigCrate]
 
+vertical [action splayer | BigCrate] -> [splayer | Scrate]
+horizontal [scrate | ... | Crate] -> [scrate | ... | < Crate]
+[scrate] -> [BigCrate]
+
+horizontal[action splayer | FusedCrate] -> [splayer | Scrate]
+vertical[scrate | ... | Crate] -> [scrate | ... | < Crate]
+[scrate] -> [FusedCrate]
+
 vertical[action splayer | FusedCrate] -> [splayer | Scrate]
 horizontal[scrate | ... | Crate] -> [scrate | ... | < Crate]
 [scrate] -> [FusedCrate]
 
-(Crate interaction with tools)
+
+(Prevent crates from landing on top of tools)
 [> crate | tool] -> [crate | tool]
+
 
 (UnAcid rules  - fuses crates together that can fill in holes)
 [> Aplayer | Crate | Crate] -> [Aplayer |  | FusedCrate] sfx6
 
+
 (Hole rules)
 [> FusedCrate | Hole ] -> [|] sfx5
+
 
 (UnCrowbar rules - makes a group of consecutive crates a single RigidCrate)
 
