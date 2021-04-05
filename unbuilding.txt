@@ -602,6 +602,27 @@ Message You must put all the boxes on their same-colored targets, and finish you
 ###########
 le[el.!....
 
+(Unhammer Levels)
+
+(Unhammer Tutorial)
+########### (Small targets: 1) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 0)
+#1...*#...#
+#....*#...#
+#....*#o.*#
+#....*#...#
+#h...*#...#
+###########
+le[el.,....
+
+
+(more of an extended tutorial than a puzzle)
+############# (Small targets: 0) (Big targets: 2) (Fused Targets: 0) (Rigid Targets: 0)
+#..bi.1.ib..#
+#.####h####.#
+#...........#
+#############
+le[el.~......
+
 (UnCrowbar levels)
 
 (UnCrowbar Tutorial)
@@ -627,6 +648,7 @@ le[el.$......
 #...*...r...#
 #....#*.r...#
 #############
+le[el.%......
 
 (2)
 ############# (Small targets: 0) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 3)
@@ -638,6 +660,7 @@ le[el.$......
 #...........#
 #....#*.r...#
 #############
+le[el.?......
 
 (3)
 ############# (Small targets: 0) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 3)
@@ -649,6 +672,7 @@ le[el.$......
 #...........#
 #....#*.r..r#
 #############
+le[el.&......
 
 (4)
 ############# (Small targets: 3) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 3)
@@ -660,7 +684,7 @@ le[el.$......
 #...........#
 #.r.*#*.r..o#
 #############
-
+le[el./......
 
 (5)
 ############# (Small targets: 2) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 3)
@@ -672,7 +696,7 @@ le[el.$......
 #.......#####
 ##*r#..r#####
 #############
-
+le[el.\......
 
 	(taking boxes out of walls)
 (1)
@@ -685,6 +709,7 @@ le[el.$......
 #....*#.....#
 #....##.....#
 #############
+le[el.!Z.....
 
 (2)
 ############# (Small targets: 1) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 2)
@@ -696,7 +721,7 @@ le[el.$......
 #....*#*....#
 #....###....#
 #############
-
+le[el.!!.....
 
 
 (3)
@@ -709,6 +734,7 @@ le[el.$......
 #.*.o..*....#
 #...........#
 #############
+le[el.!,......
 
 (4)
 ############# (Small targets: 0) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 3)
@@ -720,6 +746,7 @@ le[el.$......
 #.*.........#
 #...........#
 #############
+le[el.!~.....
 
 (5)
 ############# (Small targets: 0) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 4)
@@ -731,7 +758,7 @@ le[el.$......
 #.*.........#
 #........*..#
 #############
-
+le[el.!$.....
 
 
 
@@ -750,7 +777,7 @@ le[el.$......
 ####*...o####
 #####*..o####
 #############
-
+le[el.!%.....
 
 
 (2)
@@ -763,7 +790,7 @@ le[el.$......
 #.o..*#..#*r#
 #o..*##....r#
 #############
-
+le[el.!?.....
 
 (3)
 ############# (Small targets: 4) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 1)
@@ -774,6 +801,7 @@ le[el.$......
 #..###....*.#
 #.o....*#####
 #############
+le[el.!&.....
 
 	(escaping a box mess)
     
@@ -788,6 +816,7 @@ le[el.$......
 #......######
 ###..########
 #############
+le[el.!/.....
 
 (2)
 
@@ -800,6 +829,7 @@ le[el.$......
 #......######
 ##....#######
 #############
+le[el.!\.....
 
 (3)
 
@@ -812,6 +842,7 @@ le[el.$......
 ##..*......r#
 ##.*..###*.r#
 #############
+le[el.,Z.....
 
 (UnAcid levels)
 
@@ -824,7 +855,7 @@ le[el.$......
 #...B*....#
 #1.......A#
 ###########
-le[el.~....
+le[el.,!...
 
 	(filling holes)
     
@@ -838,6 +869,7 @@ le[el.~....
 #......0.*.p#
 #.a....#....#
 #############
+le[el.,,.....
 
 (2)
 ############# (Small targets: 0) (Big targets: 0) (Fused Targets: 1) (Rigid Targets: 0)
@@ -849,6 +881,7 @@ le[el.~....
 #.*...##..*.#
 #.....##....#
 #############
+le[el.,~.....
 
 (3)
 ############# (Small targets: 0) (Big targets: 0) (Fused Targets: 1) (Rigid Targets: 0)
@@ -860,6 +893,7 @@ le[el.~....
 #.***.#...*.#
 #.....#.a...#
 #############
+le[el.,$.....
 
 (4)
 
@@ -872,6 +906,7 @@ le[el.~....
 #0000.*...*.#
 #p**0.......#
 #############
+le[el.,%.....
 
 (5)
 
@@ -884,6 +919,7 @@ le[el.~....
 #0*.0.###...#
 #p*.0.###.1.#
 #############
+le[el.,?.....
 
 	(passing throught a box mess)
  
@@ -897,6 +933,7 @@ le[el.~....
 #p.##########
 #.p##########
 #############
+le[el.,&.....
 
 (2)
 ###*######### (Small targets: 2) (Big targets: 0) (Fused Targets: 3) (Rigid Targets: 0)
@@ -908,6 +945,7 @@ le[el.~....
 #p.##########
 #.o##########
 #############
+le[el.,/.....
  
 (3)
 #############(Small targets: 3) (Big targets: 0) (Fused Targets: 2) (Rigid Targets: 0)
@@ -919,6 +957,7 @@ le[el.~....
 #p..........#
 #...........#
 #############
+le[el.,\.....
 
 
 (Debugging level)
@@ -944,26 +983,6 @@ le[el.~....
 #...........#
 #...P.I.O...#
 #############)
-
-(Unhammer Levels)
-
-(Unhammer Tutorial)
-########### (Small targets: 1) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 0)
-#1...*#...#
-#....*#...#
-#....*#o.*#
-#....*#...#
-#h...*#...#
-###########
-le[el.!....
-
-
-(more of an extended tutorial than a puzzle)
-############# (Small targets: 0) (Big targets: 2) (Fused Targets: 0) (Rigid Targets: 0)
-#..bi.1.ib..#
-#.####h####.#
-#...........#
-#############
 
 
 (Unsaw Levels)
@@ -978,7 +997,7 @@ le[el.!....
 #...#.#...#
 #....*....#
 ###########
-le[el.,....
+le[el.~Z...
 
 ######### (Small targets: 1) (Big targets: 2) (Fused Targets: 0) (Rigid Targets: 0)
 #......b#
@@ -989,6 +1008,7 @@ le[el.,....
 #.1.....#
 #.so....#
 #########
+le[el.~!.
 
 ########### (Small targets: 4) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 0)
 #.#*#.#.#.#
@@ -1000,6 +1020,7 @@ le[el.,....
 ##.#.#.#.##
 #........1#
 ###########
+le[el.~,...
 
 ############ (Small targets: 0) (Big targets: 6) (Fused Targets: 0) (Rigid Targets: 0)
 #b#..b...#b#
@@ -1010,6 +1031,7 @@ le[el.,....
 #..bbbbbb..#
 #..........#
 ############
+le[el.~~....
 
 ############ (Small targets: 0) (Big targets: 6) (Fused Targets: 0) (Rigid Targets: 0)
 #b#..b...#b#
@@ -1020,6 +1042,7 @@ le[el.,....
 #..bbb.bb..#
 #..........#
 ############
+le[el.~$....
 
 ############# (Small targets: 1) (Big targets: 4) (Fused Targets: 0) (Rigid Targets: 0)
 #...........#
@@ -1033,6 +1056,7 @@ le[el.,....
 #1...*......#
 #...........#
 #############
+le[el.~%.....
 
 ############### (Small targets: 11) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 0)
 #*.....*..#o..#
@@ -1045,6 +1069,7 @@ le[el.,....
 #o@..1.s......#
 #.............#
 ###############
+le[el.~?.......
 
 (lockpicking, saw only)
 #################### (Small targets: 5) (Big targets: 4) (Fused Targets: 0) (Rigid Targets: 0)
@@ -1058,6 +1083,7 @@ le[el.,....
 #......b###........#
 #.s......b#........#
 ####################
+le[el.~&............
 
 (Soapy's first level)
 #################### (Small targets: 0) (Big targets: 1) (Fused Targets: 0) (Rigid Targets: 0) 
@@ -1071,6 +1097,7 @@ le[el.,....
 #.......###........#
 #hs..1...b.........#
 ####################
+le[el.~/............
 
 
 (soapy's second level)
@@ -1085,6 +1112,7 @@ le[el.,....
 #..#.############00#
 #...o....s........p#
 ####################
+le[el.~\............
 
 (soapy's third level)
 #################### (Small targets: 1) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 0) 
@@ -1098,6 +1126,7 @@ le[el.,....
 #...b0.............#
 #....0.............#
 ####################
+le[el.$Z............
 
 (Soapy's fourth level)
 ##################### (Small targets: 0) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 3) 
@@ -1112,6 +1141,7 @@ le[el.,....
 #.a.................#
 #...1....#*#........#
 #####################
+le[el.$!.............
 
 (Soapy's fifth level)
 ##################### (Small targets: 2) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 1) 
@@ -1126,6 +1156,7 @@ le[el.,....
 #*############.###00#
 #2..j...@.........0c#
 #####################
+le[el.$,.............
 
 (Soapy's sixth level)
 ######################### (Small targets: 1) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 0) 
@@ -1141,6 +1172,7 @@ le[el.,....
 #..........#..#..#...000#
 #ha3.................0c@#
 #########################
+le[el.$~.................
 
 (Soapy's Seventh level ) (Small targets: 0) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 3) 
 ###########
@@ -1150,6 +1182,7 @@ le[el.,....
 #..br..g..#
 #h........#
 ###########
+le[el.$$...
 
 (Soapy's Eigth level )
 ##################### (Small targets: 0) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 5)
@@ -1164,6 +1197,7 @@ le[el.,....
 #..................b#
 #2c............s...p#
 #####################
+le[el.$%.............
 
 (Soapy's Ninth level)
 ##################### (Small targets: 0) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 8)
@@ -1178,6 +1212,7 @@ le[el.,....
 #...................#
 #2c.................#
 #####################
+le[el.$?.............
 
 
 (dpickler, saw hammer levels)
@@ -1190,6 +1225,7 @@ le[el.,....
 #...#.......#
 #.#*#.......#
 #############
+le[el.$&.....
 
 ############### (Small targets: 8) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 0)
 #.............#
@@ -1206,6 +1242,7 @@ le[el.,....
 #.............#
 #.............#
 ###############
+le[el.$/.......
 
 (lockpicking, hammer and saw)
 ################### (Small targets: 6) (Big targets: 5) (Fused Targets: 0) (Rigid Targets: 0)
@@ -1225,6 +1262,7 @@ le[el.,....
 #.......##........#
 #........s........#
 ###################
+le[el.$\...........
 
 
 (It's a mystery!) 
@@ -1255,3 +1293,4 @@ c........o.......o...................................c
 #.......oooo.........................................#
 #....................................................#
 ###hsajc###############hsajc##################hsajc###
+le[el.%Z..............................................
