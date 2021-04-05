@@ -1264,6 +1264,7 @@ le[el.$/.......
 ###################
 le[el.$\...........
 
+Message You can .done now!
 
 (It's a mystery!) 
 (Plenty of tools, ideally uses all of the blocks we put on targets in earlier levels)
