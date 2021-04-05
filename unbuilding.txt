@@ -549,6 +549,12 @@ horizontal[scrate | ... | Crate] -> [scrate | ... | < Crate]
 (Prevent crates from landing on top of tools)
 [> crate | tool] -> [crate | tool]
 
+(If a light crate is pushed off it's target is hould change to it's darker variant)
+[LightLittleCrate | LittleTarget ] -> [DarkLittleCrate | LittleTarget ]
+[LightBigCrate | BigTarget] -> [DarkBigCrate | BigTarget]
+[LightFusedCrate | FusedTarget] -> [DarkFusedCrate | FusedTarget]
+[LightRigidCrate | RigidTarget] -> [DarkRigidCrate | RigidTarget]
+
 (When a dark crate is on top of it's target, it should change to it's lighter variant)
 [DarkLittleCrate LittleTarget] -> [LightLittleCrate LittleTarget]
 [DarkBigCrate BigTarget] -> [LightBigCrate BigTarget]
