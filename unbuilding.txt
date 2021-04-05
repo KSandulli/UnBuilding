@@ -26,7 +26,7 @@ white
 .0...
 .000.
 
-V
+Vee
 white
 0...0
 0...0
@@ -150,35 +150,68 @@ Orange Yellow
 0.1.0
 00000
 
-LittleCrate
-Orange Yellow
+DarkLittleCrate
+Orange darkbrown Yellow
 00000
-0...0
-0...0
-0...0
-00000
-
-BigCrate
-LightBlue
-00000
-0...0
-0...0
-0...0
+01110
+01110
+01110
 00000
 
-FusedCrate
-lightgreen
+LightLittleCrate
+Orange red
 00000
-00000
-00000
-00000
+01110
+01110
+01110
 00000
 
-RigidCrate
-red blue
+DarkBigCrate
+LightBlue darkblue
+00000
+01110
+01110
+01110
+00000
+
+LightBigCrate
+LightBlue blue
+00000
+01110
+01110
+01110
+00000
+
+LightFusedCrate
+lightgreen darkgreen
+00000
+01110
+01110
+01110
+00000
+
+DarkFusedCrate
+lightgreen green
+00000
+01110
+01110
+01110
+00000
+
+
+DarkRigidCrate
+#381414 blue
 00100
 01110
-11011
+11111
+01110
+00100
+
+LightRigidCrate
+#ff5252 blue
+00100
+01110
+11111
 01110
 00100
 
@@ -322,10 +355,10 @@ LEGEND
 0 = Hole
 
 (crates)
-* = LittleCrate
-B = BigCrate
-F = FusedCrate
-G = RigidCrate
+* = DarkLittleCrate
+B = DarkBigCrate
+F = DarkFusedCrate
+G = DarkRigidCrate
 
 (targets)
 O = LittleTarget
@@ -334,10 +367,10 @@ P = FusedTarget
 R = RigidTarget
 
 (occupied targets)
-@ = LittleTarget and LittleCrate
-T = BigTarget and BigCrate
-U = FusedTarget and FusedCrate
-D = RigidTarget and RigidCrate
+@ = LittleTarget and LightLittleCrate
+T = BigTarget and LightBigCrate
+U = FusedTarget and LightFusedCrate
+D = RigidTarget and LightRigidCrate
 
 (players)
 1 = Cplayer
@@ -364,11 +397,16 @@ $ = Four
 & = Seven
 / = Eight 
 \ = Nine
+[ = Vee
 
 
 
 
 (Define crate types)
+LittleCrate = DarkLittleCrate or LightLittleCrate
+BigCrate = DarkBigCrate or LightBigCrate
+FusedCrate = DarkFusedCrate or LightFusedCrate
+RigidCrate = DarkRigidCrate or LightRigidCrate
 Crate = LittleCrate or BigCrate or FusedCrate or RigidCrate or LittleToRigidCrate or RigidToLittleCrate
 
 (Define Player types)
@@ -381,7 +419,7 @@ Tool = UnHammer or UnSaw or Coffee or UnAcid or UnCrowbar
 Target = LittleTarget or BigTarget or FusedTarget or RigidTarget
 
 (Level counter definitions)
-Letter = L or E or V
+Letter = L or E or Vee
 Number = Zero or One or Two or Three or Four or Five or Six or Seven or Eight or Nine
 
 
@@ -450,7 +488,6 @@ RULES
 (UnHammer player rules)
 [action Hplayer | crate | ... |crate] -> [Hplayer |crate| ... | < crate ]
 
-
 (UnSaw player rules
 Works by swapping out the targeted crates with a new crate type that will attract other crates.  Then swaps the crate back at the end. 
 	- This requires a set of rules for each crate type, and for horizontal/vertical positioning
@@ -460,31 +497,31 @@ Works by swapping out the targeted crates with a new crate type that will attrac
 
 horizontal [action splayer | LittleCrate] -> [splayer | Scrate]
 vertical [scrate | ... | Crate] -> [scrate | ... | < Crate]
-[scrate] -> [LittleCrate]
+[scrate] -> [DarkLittleCrate]
 
 vertical [action splayer | LittleCrate] -> [splayer | Scrate]
 horizontal [scrate | ... | Crate] -> [scrate | ... | < Crate]
-[scrate] -> [LittleCrate]
+[scrate] -> [DarkLittleCrate]
 
 horizontal [action splayer | BigCrate] -> [splayer | Scrate]
 vertical [scrate | ... | Crate] -> [scrate | ... | < Crate]
-[scrate] -> [BigCrate]
+[scrate] -> [DarkBigCrate]
 
 vertical [action splayer | BigCrate] -> [splayer | Scrate]
 horizontal [scrate | ... | Crate] -> [scrate | ... | < Crate]
-[scrate] -> [BigCrate]
+[scrate] -> [DarkBigCrate]
 
 horizontal[action splayer | FusedCrate] -> [splayer | Scrate]
 vertical[scrate | ... | Crate] -> [scrate | ... | < Crate]
-[scrate] -> [FusedCrate]
+[scrate] -> [DarkFusedCrate]
 
 vertical[action splayer | FusedCrate] -> [splayer | Scrate]
 horizontal[scrate | ... | Crate] -> [scrate | ... | < Crate]
-[scrate] -> [FusedCrate]
+[scrate] -> [DarkFusedCrate]
 
 
 (UnAcid rules  - fuses crates together that can fill in holes)
-[> Aplayer | Crate | Crate] -> [Aplayer |  | FusedCrate] sfx6
+[> Aplayer | Crate | Crate] -> [Aplayer |  | DarkFusedCrate] sfx6
 
 
 (Hole rules)
@@ -496,12 +533,12 @@ horizontal[scrate | ... | Crate] -> [scrate | ... | < Crate]
 [action Jplayer | LittleCrate] -> [ Jplayer | LittleToRigidCrate] sfx8 (transform initial crate into rigid crate)
 +[LittleToRigidCrate | LittleCrate] -> [LittleToRigidCrate | LittleToRigidCrate] (each crate transforms its neighbors)
 
-[LittleToRigidCrate] -> [RigidCrate] (transforms all crates at once)
+[LittleToRigidCrate] -> [DarkRigidCrate] (transforms all crates at once)
 
 [action Jplayer | RigidCrate] -> [ Jplayer | RigidToLittleCrate] (transform initial crate into little crate)
 +[RigidToLittleCrate | RigidCrate] -> [RigidToLittleCrate | RigidToLittleCrate] (each crate transforms its neighbors)
 
-[RigidToLittleCrate] -> [LittleCrate] sfx7 (transforms all crates at once)
+[RigidToLittleCrate] -> [DarkLittleCrate] sfx7 (transforms all crates at once)
 
 
 
@@ -511,6 +548,13 @@ horizontal[scrate | ... | Crate] -> [scrate | ... | < Crate]
 
 (Prevent crates from landing on top of tools)
 [> crate | tool] -> [crate | tool]
+
+(When a dark crate is on top of it's target, it should change to it's lighter variant)
+[DarkLittleCrate LittleTarget] -> [LightLittleCrate LittleTarget]
+[DarkBigCrate BigTarget] -> [LightBigCrate BigTarget]
+[DarkFusedCrate FusedTarget] -> [LightFusedCrate FusedTarget]
+[DarkRigidCrate RigidTarget] -> [LightRigidCrate RigidTarget]
+
 
 WINCONDITIONS
 ==============
@@ -536,7 +580,7 @@ Message You must put all the boxes on their same-colored targets, and finish you
 #.........#
 #..*..o...#
 ###########
-level.!....
+le[el.!....
 
 (UnCrowbar levels)
 
@@ -550,7 +594,7 @@ level.!....
 #....#*.r...#
 #....#......#
 #############
-level.$......
+le[el.$......
 
 	(moving boxes stucked on walls)
 (1)
@@ -760,7 +804,7 @@ level.$......
 #...B*....#
 #1.......A#
 ###########
-level.~....
+le[el.~....
 
 	(filling holes)
     
@@ -891,7 +935,7 @@ level.~....
 #....*#...#
 #h...*#...#
 ###########
-level.!....
+le[el.!....
 
 
 (more of an extended tutorial than a puzzle)
@@ -914,7 +958,7 @@ level.!....
 #...#.#...#
 #....*....#
 ###########
-level.,....
+le[el.,....
 
 ######### (Small targets: 1) (Big targets: 2) (Fused Targets: 0) (Rigid Targets: 0)
 #......b#
