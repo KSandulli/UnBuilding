@@ -305,6 +305,14 @@ Black Orange White Blue Gray yellow black red
 .333.
 .3.3.
 
+Tplayer (tutorial player, doesn't have a tool)
+Black Orange White Blue Gray yellow
+.555.
+.444
+21212
+.333.
+.3.3.
+
 (tools)
 UnHammer
 black lightbrown
@@ -378,6 +386,7 @@ D = RigidTarget and LightRigidCrate
 3 = Splayer
 4 = Aplayer
 5 = Jplayer
+6 = Tplayer
 
 (tools)
 H = UnHammer
@@ -410,7 +419,7 @@ RigidCrate = DarkRigidCrate or LightRigidCrate
 Crate = LittleCrate or BigCrate or FusedCrate or RigidCrate or LittleToRigidCrate or RigidToLittleCrate
 
 (Define Player types)
-Player = Hplayer or Cplayer or Splayer or Aplayer or Jplayer
+Player = Hplayer or Cplayer or Splayer or Aplayer or Jplayer or Tplayer
 
 (Define tool types)
 Tool = UnHammer or UnSaw or Coffee or UnAcid or UnCrowbar
@@ -484,6 +493,11 @@ RULES
 [action Jplayer UnSaw] 		-> [Splayer UnCrowbar] sfx1
 [action Jplayer UnAcid] 	-> [Aplayer UnCrowbar] sfx2
 
+[action Tplayer Coffee] 	-> [Cplayer] sfx3
+[action Tplayer UnHammer] 	-> [Hplayer] sfx0
+[action Tplayer UnSaw] 		-> [Splayer] sfx1
+[action Tplayer UnAcid] 	-> [Aplayer] sfx2
+[action Tplayer UnCrowbar] 	-> [Jplayer] sfx4
 
 (UnHammer player rules)
 [action Hplayer | crate | ... |crate] -> [Hplayer |crate| ... | < crate ]
@@ -580,7 +594,7 @@ Message You must put all the boxes on their same-colored targets, and finish you
 
 (Coffe Tutorial)
 ########### (Small targets: 3) (Big targets: 0) (Fused Targets: 0) (Rigid Targets: 0)
-#2c.......#
+#6c.......#
 #...*.o...#
 #.*...o...#
 #.........#
